@@ -118,7 +118,7 @@ export const postLoadedRoute = chainRoute({
 
 export const authorLoadedRoute = chainRoute({
   route: postLoadedRoute,
-  before: {
+  beforeOpen: {
     effect: getUserFx,
     source: $post,
     mapParams: (_, post) => ({ userId: post.authorId }),
@@ -127,7 +127,7 @@ export const authorLoadedRoute = chainRoute({
 
 export const commentsLoadedRoute = chainRoute({
   route: postLoadedRoute,
-  before: {
+  beforeOpen: {
     effect: getCommentsFx,
     source: $post,
     mapParams: (_, post) => ({ postId: post.id }),
