@@ -36,15 +36,15 @@ export default {
         items: [
           {
             text: "React",
-            link: "https://github.com/kelin2025/atomic-router-react",
+            link: "https://github.com/atomic-router/react",
           },
           {
             text: "Forest",
-            link: "https://github.com/sergeysova/atomic-router-forest",
+            link: "https://github.com/atomic-router/forest",
           },
           {
             text: "Solid",
-            link: "https://github.com/Drevoed/atomic-router-solid",
+            link: "https://github.com/atomic-router/solid",
           },
         ],
       },

@@ -19,6 +19,6 @@ There are 3 purposes for using atomic routes:
 
 ## View-library bindings
 
-- [**React**](https://github.com/kelin/atomic-router-react)
-- [**Forest**](https://github.com/sergeysova/atomic-router-forest)
-- [**Solid**](https://github.com/Drevoed/atomic-router-solid)
+- [**React**](https://github.com/atomic-router/react)
+- [**Forest**](https://github.com/atomic-router/forest)
+- [**Solid**](https://github.com/atomic-router/solid)
