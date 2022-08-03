@@ -33,7 +33,7 @@ router.setHistory(history);
 
 ## Handling 404 errors
 
-#### `notFoundRoute` param
+### `notFoundRoute` param
 
 You can pass `notFoundRoute` param to mark speicific route as 404:
 
