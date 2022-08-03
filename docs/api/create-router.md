@@ -31,6 +31,48 @@ const history = isSsr ? createMemoryHistory() : createBrowserHistory();
 router.setHistory(history);
 ```
 
+## Handling 404 errors
+
+#### `notFoundRoute` param
+
+You can pass `notFoundRoute` param to mark speicific route as 404:
+
+```ts
+import { createRoute, createHistoryRouter } from "atomic-router";
+
+const notFoundRoute = createRoute()
+
+const router = createHistoryRouter({
+  routes: [...],
+  notFoundRoute
+})
+```
+
+::: tip `notFoundRoute` mechanics  
+Every time path changes:  
+- If 0 routes matched and `notFoundRoute.$isOpened` is `false`, trigger `notFoundRoute.opeend`
+- If 0 routes matched and `notFoundRoute.$isOpened` is `true`, trigger `notFoundRoute.updated`
+- If there's at least 1 route matched and `notFoundRoute.$isOpened` is `true`, trigger `notFoundRoute.closed`
+:::
+
+### `routeNotFound` event
+
+There's also a `router.routeNotFound` event.  
+This event triggers every time the path changes and no routes matched:
+
+```ts
+import { createRoute, createHistoryRouter } from "atomic-router";
+
+const router = createHistoryRouter({
+  routes: [...]
+})
+
+sample({
+  clock: router.routeNotFound,
+  target: goToHomePage
+})
+```
+
 ## `base` param
 
 You can add an optional `base` param to `createHistoryRouter`:
