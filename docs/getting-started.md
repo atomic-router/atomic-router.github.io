@@ -22,10 +22,10 @@ import { createRoute } from 'atomic-router';
 
 export const homeRoute = createRoute();
 
-// @/pages/posts
+// @/pages/post
 import { createRoute } from 'atomic-router';
 
-export const postsRoute = createRoute<{ postId: string }>();
+export const postRoute = createRoute<{ postId: string }>();
 ```
 
 And then create a router
@@ -36,12 +36,12 @@ import { createHistoryRouter } from 'atomic-router';
 import { createBrowserHistory, createMemoryHistory } from 'history';
 
 import { homeRoute } from '@/pages/home';
-import { postsRoute } from '@/pages/posts';
+import { postRoute } from '@/pages/post';
 
 // 1. Define routes
 const routes = [
   { path: '/', route: homeRoute },
-  { path: '/posts', route: postsRoute },
+  { path: '/posts/:postId', route: postRoute },
 ];
 
 // 2. Create router
