@@ -50,7 +50,7 @@ const router = createHistoryRouter({
 
 ::: tip `notFoundRoute` mechanics  
 Every time path changes:  
-- If 0 routes matched and `notFoundRoute.$isOpened` is `false`, trigger `notFoundRoute.opeend`
+- If 0 routes matched and `notFoundRoute.$isOpened` is `false`, trigger `notFoundRoute.opened`
 - If 0 routes matched and `notFoundRoute.$isOpened` is `true`, trigger `notFoundRoute.updated`
 - If there's at least 1 route matched and `notFoundRoute.$isOpened` is `true`, trigger `notFoundRoute.closed`
 :::
