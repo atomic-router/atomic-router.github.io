@@ -66,7 +66,7 @@ export const editUsersRoute = createRoute()
 export const authorizedEditUsersRoute = authorizedRoute(editUsersRoute)
 ```
 :::tip How it works
-When we open `editUsersRoute`,
+When we open `editUsersRoute`
 - If `$isAuthorized` is true, open `authorizedEditUsersRoute` immediately
 - If not, wait until `tokenReceived` is trigger, and open the route if we're still on this page
 :::
