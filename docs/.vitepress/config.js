@@ -24,6 +24,7 @@ export default {
         items: [
           { text: "Data Fetching", link: "/examples/data-fetching" },
           { text: "Protected route", link: "/examples/protected-route" },
+          { text: "Catch All", link: "/examples/catch-all" },
           { text: "Redirect", link: "/examples/redirect" },
           { text: "Query Params Sync", link: "/examples/query-params-sync" },
           { text: "SSR Support", link: "/examples/ssr" },
