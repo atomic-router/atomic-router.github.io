@@ -55,3 +55,12 @@ const history = isSsr ? createMemoryHistory() : createBrowserHistory();
 // 4. Attach it to router
 router.setHistory(history);
 ```
+
+## `fork` support
+
+In order to work with `fork`, you need to add this to your `.babelrc`: 
+```json
+{
+  "presets": ["atomic-router/babel-preset"]
+}
+```
