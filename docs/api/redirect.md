@@ -17,8 +17,10 @@ redirect({
   target: homeRoute,
 });
 ```
-
-When `goHomePressed` is triggered, it'll open `homeRoute`
+::: tip The following is read as: 
+Whenever `goHomePressed` is triggered,  
+Trigger `homeRoute.navigate` with `{ params: {}, query: {} }`
+:::
 
 ## Passing params
 
@@ -41,6 +43,10 @@ redirect({
   target: readPostRoute,
 });
 ```
+::: tip The following is read as:
+Whenever `readMorePressed` is triggered,  
+Trigger `homeRoute.navigate` with `{ params: { postId: 1 }, query: { foo: "bar" } }`
+:::
 
 ### 2. Store notation - dynamic params/query taken from store
 
@@ -61,6 +67,10 @@ redirect({
   target: editPostRoute,
 });
 ```
+::: tip The following is read as:
+Whenever `editPostPressed` is triggered,  
+Trigger `editPostRoute.navigate` with `{ params: <state from $post store>, query: <state from $someQuery store> }`
+:::
 
 ### 3. Function notation - get params/query directly from clock
 
@@ -78,6 +88,10 @@ redirect({
   target: editPostRoute,
 });
 ```
+::: tip The following is read as:
+Whenever `editPostPressed` is triggered,  
+Trigger `editPostRoute.navigate` with `{ params: payload.postId }` (`payload` is from `editPostPressed`)
+:::
 
 ## Return redirect
 
@@ -94,14 +108,20 @@ import { notFoundRoute, notAuthorizedRoute } from '@/shared/common-routes'
 const getPostFx = createEffect(() => /* ... */)
 
 split({
-  source: getPostFx,
+  source: getPostFx.failData,
   match: {
     401: err => err.code === 401,
     404: err => err.code === 404,
   },
   cases: {
     401: redirect({ route: notAuthorizedRoute }),
-    401: redirect({ route: notFoundRoute }),
+    404: redirect({ route: notFoundRoute }),
   }
 })
 ```
+
+::: tip The following is read as:
+Whenever `getPostFx.failData` is triggered,  
+- If `err.code` is 401, trigger `notAuthorizedRoute.navigate` with `{ params: {}, query: {} }`
+- If `err.code` is 404, trigger `notFoundRoute.navigate` with `{ params: {}, query: {} }`
+:::
