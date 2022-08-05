@@ -4,7 +4,7 @@ In this example, we will demonstrate how to implement catch-all route.
 
 ## Task
 
-We want to catch all `/foo/bar`, `/foo/bar/baz` and `/foo/bar/baz/test` routes.
+We want to catch all `/foo/bar`, `/foo/bar/baz` and `/foo/bar/baz/test` paths.
 
 ## Solution
 
