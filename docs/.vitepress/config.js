@@ -50,5 +50,9 @@ export default {
         ],
       },
     ],
+    editLink: {
+      pattern: 'https://github.com/atomic-router/atomic-router.github.io/edit/master/docs/:path',
+      text: 'Edit this page on GitHub'
+    }
   },
 };
