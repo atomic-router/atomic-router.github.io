@@ -34,13 +34,13 @@ Then, we can create a simple wrapper:
 
 ```ts
 // @/shared/route
-import { chainRoute } from 'atomic-router'
+import { chainRoute, RouteInstance, RouteParamsAndQuery } from 'atomic-router'
 import { createEvent } from 'effector'
 
 import { $isAuthorized, tokenReceived } from '@/shared/auth'
 
 export const authorizedRoute = <Params>(route: RouteInstance<Params>) => {
-  const sessionCheckStarted = createEvent<any>()
+  const sessionCheckStarted = createEvent<RouteParamsAndQuery<Params>>()
 
   const alreadyAuthorized = sample({
     clock: sessionCheckStarted,
