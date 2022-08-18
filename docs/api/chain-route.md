@@ -14,7 +14,7 @@ const getPostFx = createEffect((postId: string) => {
   return fetch(/* ... */);
 });
 
-const $post = restore(getPostFx.doneData);
+const $post = restore(getPostFx.doneData, null);
 
 const postLoadedRoute = chainRoute({
   route: postRoute,
