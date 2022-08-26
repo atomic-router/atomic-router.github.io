@@ -32,11 +32,24 @@ postRoute.$params.watch(console.log);
 Open the route with specified params and query
 
 ```ts
-postRoute.navigate({ params: { postId: "123" }, query: { foo: "bar" } });
+postRoute.navigate({ 
+  params: { postId: "123" }, 
+  query: { foo: "bar" } 
+});
 // /posts/:postId -> /posts/123?foo=bar
 ```
 
-**Signature:** `Effect<RouteParamsAndQuery<RouteParams>, RouteParamsAndQuery<RouteParams>>`
+You can also add `replace: true` option to do `history.replace` instead of `history.push`:
+
+```ts
+postRoute.navigate({
+  params: { postId: "123" },
+  query: { foo: "bar" },
+  replace: true
+})
+```
+
+**Signature:** `Effect<RouteParamsAndQuery<RouteParams> & { replace?: boolean }, RouteParamsAndQuery<RouteParams>>`
 
 ### `.open`
 
