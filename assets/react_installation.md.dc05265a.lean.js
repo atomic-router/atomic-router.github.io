@@ -1,0 +1,1 @@
+import{_ as a,c as t,o as s,a as e}from"./app.0201dad1.js";const h=JSON.parse('{"title":"React-bindings installation","description":"","frontmatter":{},"headers":[],"relativePath":"react/installation.md"}'),n={name:"react/installation.md"},c=e("",7),o=[c];function i(l,r,p,d,_,u){return s(),t("div",null,o)}const m=a(n,[["render",i]]);export{h as __pageData,m as default};
