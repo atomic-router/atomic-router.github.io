@@ -64,3 +64,26 @@ In order to work with `fork`, you need to add this to your `.babelrc`:
   "presets": ["atomic-router/babel-preset"]
 }
 ```
+
+### SWC support
+
+Before continue you need to install [`@effector/swc-plugin`](https://github.com/effector/swc-plugin#installation).
+
+Next you need to add `"atomic-router"` into `factories` array:
+
+```json5
+// .swcrc
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "jsc": {
+    "experimental": {
+      "plugins": [
+        "@effector/swc-plugin",
+        {
+          "factories": ["atomic-router"]
+        }
+      ]
+    }
+  }
+}
+```
