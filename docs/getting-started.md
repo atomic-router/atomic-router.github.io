@@ -71,7 +71,7 @@ Before continue you need to install [`@effector/swc-plugin`](https://github.com/
 
 Next you need to add `"atomic-router"` into `factories` array:
 
-```json5
+```json
 // .swcrc
 {
   "$schema": "https://json.schemastore.org/swcrc",
