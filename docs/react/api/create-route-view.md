@@ -8,7 +8,7 @@ import { createRouteView } from 'atomic-router-react';
 
 > Tip: please, pay attention for a name. This function is about single route.
 >
-> See also [`createRoutesView`](./create-routes-view.md).
+> See also [`createRoutesView`](docs/react/api/create-routes-view.mdoutes-view.md).
 
 ### Example
 
