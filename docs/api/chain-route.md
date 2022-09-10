@@ -1,12 +1,16 @@
-# chainRoute
+# `chainRoute`
 
 Creates a virtual route that opens after specific request completion.
+
+```ts
+import { chainRoute } from 'atomic-router';
+```
 
 ## Usage
 
 ```ts
-import { createRoute, chainRoute } from "atomic-router";
-import { createEffect, restore } from "effector";
+import { createRoute, chainRoute } from 'atomic-router';
+import { createEffect, restore } from 'effector';
 
 const postRoute = createRoute<{ postId: string }>();
 
@@ -40,8 +44,8 @@ If you close `postRoute` during request, `postLoadedRoute` won't be opened even 
 If you need more precise control or doesn't have _some Promise-thing_ to wait, you there's `openOn` and `cancelOn` params:
 
 ```ts
-import { createRoute, chainRoute } from "atomic-router";
-import { createEvent } from "effector";
+import { createRoute, chainRoute } from 'atomic-router';
+import { createEvent } from 'effector';
 
 const route = createRoute();
 

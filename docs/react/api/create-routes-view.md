@@ -6,9 +6,11 @@ It renders a list of routes.
 import { createRouteView } from 'atomic-router-react';
 ```
 
-> Tip: please, pay attention for a name. This function is about multiple routes.
->
-> See also [`createRouteView`](docs/react/api/create-route-view.mdroute-view.md).
+::: tip Please, pay attention for a name
+
+This function is about multiple routes. See also [`createRouteView`](./create-route-view.md).
+
+:::
 
 ### Example
 
@@ -40,7 +42,7 @@ export function App() {
 }
 ```
 
-Like in [`createRouteView`](docs/react/api/create-route-view.mdroute-view.md), you can set only a part of `createRoutesView` config on create and pass the rest of it via props:
+Like in [`createRouteView`](./create-route-view.md), you can set only a part of `createRoutesView` config on create and pass the rest of it via props:
 
 ```tsx
 import { SpecificNotFound } from '@/errors/specific-not-found';

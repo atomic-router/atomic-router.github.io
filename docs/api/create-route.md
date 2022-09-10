@@ -1,7 +1,11 @@
-# createRoute
+# `createRoute`
 
 Creates a route.  
 You can `.open()` it subscribe to its `opened/closed` events, and watch for `$params/$query`
+
+```ts
+import { createRoute } from 'atomic-router';
+```
 
 ## Common stuff
 
@@ -14,13 +18,13 @@ You can `.open()` it subscribe to its `opened/closed` events, and watch for `$pa
 ## Usage
 
 ```ts
-import { createRoute } from "atomic-router";
+import { createRoute } from 'atomic-router';
 
 export const homeRoute = createRoute();
 export const postRoute = createRoute<{ postId: string }>();
 
 homeRoute.open();
-postRoute.open({ postId: "123" });
+postRoute.open({ postId: '123' });
 
 postRoute.$params.watch(console.log);
 ```
@@ -32,9 +36,9 @@ postRoute.$params.watch(console.log);
 Open the route with specified params and query
 
 ```ts
-postRoute.navigate({ 
-  params: { postId: "123" }, 
-  query: { foo: "bar" } 
+postRoute.navigate({
+  params: { postId: '123' },
+  query: { foo: 'bar' },
 });
 // /posts/:postId -> /posts/123?foo=bar
 ```
@@ -43,10 +47,10 @@ You can also add `replace: true` option to do `history.replace` instead of `hist
 
 ```ts
 postRoute.navigate({
-  params: { postId: "123" },
-  query: { foo: "bar" },
-  replace: true
-})
+  params: { postId: '123' },
+  query: { foo: 'bar' },
+  replace: true,
+});
 ```
 
 **Signature:** `Effect<RouteParamsAndQuery<RouteParams> & { replace?: boolean }, RouteParamsAndQuery<RouteParams>>`
@@ -56,7 +60,7 @@ postRoute.navigate({
 The same as `.navigate` but with params only
 
 ```ts
-postRoute.open({ postId: "123" });
+postRoute.open({ postId: '123' });
 // /posts/:postId -> /posts/123
 ```
 

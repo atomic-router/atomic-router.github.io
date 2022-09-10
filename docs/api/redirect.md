@@ -1,12 +1,16 @@
-# redirect
+# `redirect`
 
 Declarative operator for setting up redirects on a certain events
+
+```ts
+import { redirect } from 'atomic-router';
+```
 
 ## Usage
 
 ```ts
-import { createEvent } from "effector";
-import { createRoute, redirect } from "atomic-router";
+import { createEvent } from 'effector';
+import { createRoute, redirect } from 'atomic-router';
 
 const goHomePressed = createEvent<MouseEvent>();
 
@@ -17,7 +21,8 @@ redirect({
   target: homeRoute,
 });
 ```
-::: tip The following is read as: 
+
+::: tip The following is read as:
 Whenever `goHomePressed` is triggered,  
 Trigger `homeRoute.navigate` with `{ params: {}, query: {} }`
 :::
@@ -29,8 +34,8 @@ You can pass parameters in different ways:
 ### 1. Object notation - static params/query
 
 ```ts
-import { createEvent } from "effector";
-import { createRoute, redirect } from "atomic-router";
+import { createEvent } from 'effector';
+import { createRoute, redirect } from 'atomic-router';
 
 const readMorePressed = createEvent<MouseEvent>();
 
@@ -39,10 +44,11 @@ const readPostRoute = createRoute<{ postId: string }>();
 redirect({
   clock: readMorePressed,
   params: { postId: 1 },
-  query: { foo: "bar" },
+  query: { foo: 'bar' },
   target: readPostRoute,
 });
 ```
+
 ::: tip The following is read as:
 Whenever `readMorePressed` is triggered,  
 Trigger `homeRoute.navigate` with `{ params: { postId: 1 }, query: { foo: "bar" } }`
@@ -51,8 +57,8 @@ Trigger `homeRoute.navigate` with `{ params: { postId: 1 }, query: { foo: "bar" 
 ### 2. Store notation - dynamic params/query taken from store
 
 ```ts
-import { createRoute, redirect } from "atomic-router";
-import { createStore, createEvent } from "effector";
+import { createRoute, redirect } from 'atomic-router';
+import { createStore, createEvent } from 'effector';
 
 const readPostRoute = createRoute<{ postId: string }>();
 
@@ -67,6 +73,7 @@ redirect({
   target: editPostRoute,
 });
 ```
+
 ::: tip The following is read as:
 Whenever `editPostPressed` is triggered,  
 Trigger `editPostRoute.navigate` with `{ params: <state from $post store>, query: <state from $someQuery store> }`
@@ -75,8 +82,8 @@ Trigger `editPostRoute.navigate` with `{ params: <state from $post store>, query
 ### 3. Function notation - get params/query directly from clock
 
 ```ts
-import { createRoute, redirect } from "atomic-router";
-import { createStore, createEvent } from "effector";
+import { createRoute, redirect } from 'atomic-router';
+import { createStore, createEvent } from 'effector';
 
 const readPostRoute = createRoute<{ postId: string }>();
 
@@ -88,6 +95,7 @@ redirect({
   target: editPostRoute,
 });
 ```
+
 ::: tip The following is read as:
 Whenever `editPostPressed` is triggered,  
 Trigger `editPostRoute.navigate` with `{ params: payload.postId }` (`payload` is from `editPostPressed`)
@@ -121,7 +129,11 @@ split({
 ```
 
 ::: tip The following is read as:
-Whenever `getPostFx.failData` is triggered,  
-- If `err.code` is 401, trigger `notAuthorizedRoute.navigate` with `{ params: {}, query: {} }`
-- If `err.code` is 404, trigger `notFoundRoute.navigate` with `{ params: {}, query: {} }`
+
+Whenever `getPostFx.failData` is triggered,
+
+If `err.code` is 401 trigger `notAuthorizedRoute.navigate` with `{ params: {}, query: {} }`
+
+If `err.code` is 404 trigger `notFoundRoute.navigate` with `{ params: {}, query: {} }`
+
 :::

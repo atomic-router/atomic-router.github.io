@@ -6,9 +6,12 @@ It renders a view only if route is opened.
 import { createRouteView } from 'atomic-router-react';
 ```
 
-> Tip: please, pay attention for a name. This function is about single route.
->
-> See also [`createRoutesView`](docs/react/api/create-routes-view.mdoutes-view.md).
+::: tip Please, pay attention for a name
+
+This function is about single route.
+See also [`createRoutesView`](./create-routes-view.md).
+
+:::
 
 ### Example
 

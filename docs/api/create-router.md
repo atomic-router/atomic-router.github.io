@@ -1,4 +1,4 @@
-# createHistoryRouter
+# `createHistoryRouter`
 
 Creates router instance and sync routes state with the passed history instance.
 
@@ -42,23 +42,27 @@ router.setHistory(history);
 You can pass `notFoundRoute` param to mark speicific route as 404:
 
 ```ts
-import { createRoute, createHistoryRouter } from "atomic-router";
+import { createRoute, createHistoryRouter } from 'atomic-router';
 
-const notFoundRoute = createRoute()
+const notFoundRoute = createRoute();
 
 const router = createHistoryRouter({
-  routes: [...],
-  notFoundRoute
-})
+  routes: [
+    /*...*/
+  ],
+  notFoundRoute,
+});
 ```
 
-::: tip `notFoundRoute` mechanics  
+::: tip `notFoundRoute` mechanics
+
 Every time path changes:
 
 - If 0 routes matched and `notFoundRoute.$isOpened` is `false`, trigger `notFoundRoute.opened`
 - If 0 routes matched and `notFoundRoute.$isOpened` is `true`, trigger `notFoundRoute.updated`
 - If there's at least 1 route matched and `notFoundRoute.$isOpened` is `true`, trigger `notFoundRoute.closed`
-  :::
+
+:::
 
 ### `routeNotFound` event
 
@@ -66,16 +70,18 @@ There's also a `router.routeNotFound` event.
 This event triggers every time the path changes and no routes matched:
 
 ```ts
-import { createRoute, createHistoryRouter } from "atomic-router";
+import { createRoute, createHistoryRouter } from 'atomic-router';
 
 const router = createHistoryRouter({
-  routes: [...]
-})
+  routes: [
+    /*...*/
+  ],
+});
 
 sample({
   clock: router.routeNotFound,
-  target: goToHomePage
-})
+  target: goToHomePage,
+});
 ```
 
 ## `base` param

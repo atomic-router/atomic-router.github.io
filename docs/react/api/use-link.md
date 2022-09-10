@@ -6,10 +6,10 @@ The hook resolves a path into a _href_ from a route.
 import { useLink } from 'atomic-router-react';
 ```
 
-Be sure, route is passed into `routes` for [`createHistoryRouter`](docs/api/create-router.md).
+Be sure, route is passed into `routes` for [`createHistoryRouter`](../../api/create-router.md).
 Otherwise, the hook will throw `[useLink] Route not found`.
 
-Also, `useLink` requires to be used inside a [`RouterProvider`](docs/react/api/router-provider.mdr-provider.md).
+Also, `useLink` requires to be used inside a [`RouterProvider`](./router-provider.md).
 
 ### Example
 
