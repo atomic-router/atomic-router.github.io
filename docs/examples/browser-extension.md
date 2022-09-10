@@ -14,17 +14,17 @@ Since all the routes are atomic and routers are independent, we can easily creat
 
 ```ts
 // @/services/opensea.io
-import { createRoute, createHistoryRouter } from "atomic-router";
+import { createRoute, createHistoryRouter } from 'atomic-router';
 
-import * as routes from "./routes";
+import * as routes from './routes';
 
-const domain = "opensea.io";
+const domain = 'opensea.io';
 
 const router = createHistoryRouter({
   routes: [
-    { route: routes.collection, path: "/collection/:collectionId" },
-    { route: routes.asset, path: "/assets/:chain/:contractId/:assetId" },
-    { route: routes.creator, path: "/:creatorId" },
+    { route: routes.collection, path: '/collection/:collectionId' },
+    { route: routes.asset, path: '/assets/:chain/:contractId/:assetId' },
+    { route: routes.creator, path: '/:creatorId' },
   ],
 });
 
@@ -33,17 +33,17 @@ export const service = { domain, router };
 
 ```ts
 // @/services/app.uniswap.org
-import { createRoute, createHistoryRouter } from "atomic-router";
+import { createRoute, createHistoryRouter } from 'atomic-router';
 
-import * as routes from "./routes";
+import * as routes from './routes';
 
-const domain = "app.uniswap.org";
+const domain = 'app.uniswap.org';
 
 const router = createHistoryRouter({
   routes: [
-    { route: routes.swap, path: "/swap" },
-    { route: routes.createPoolFromTo, path: "/add/:from" },
-    { route: routes.createPoolFromTo, path: "/add/:from/:to" },
+    { route: routes.swap, path: '/swap' },
+    { route: routes.createPoolFromTo, path: '/add/:from' },
+    { route: routes.createPoolFromTo, path: '/add/:from/:to' },
   ],
 });
 
@@ -54,21 +54,21 @@ Then, we can create history instance and just attach it to the correct router:
 
 ```ts
 // @/app/init.ts
-import { createMemoryHistory } from "history";
+import { createMemoryHistory } from 'history';
 
-import { service as opensea } from "@/services/opensea.io";
-import { service as uniswap } from "@/services/app.uniswap.org";
+import { service as opensea } from '@/services/opensea.io';
+import { service as uniswap } from '@/services/app.uniswap.org';
 
 const services = [opensea, uniswap];
 
 // NOTE: Memory history is created instead of regular one
 // Because websites usually intercept browser events
-const createExtensionHistory = () => {
+function createExtensionHistory() {
   const history = createMemoryHistory();
   const url = new URL(location.href);
   history.push(url.pathname + url.hash + url.search);
   chrome.runtime.onMessage.addListener((request) => {
-    if (request.message === "url.changed") {
+    if (request.message === 'url.changed') {
       const url = new URL(request.url!);
       if (location.host === url.host) {
         history.push(url.pathname + url.hash + url.search);
@@ -76,7 +76,7 @@ const createExtensionHistory = () => {
     }
   });
   return history;
-};
+}
 
 export const initializeRouter = createEffect(() => {
   if (!(location.host in services)) {
@@ -97,7 +97,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   // like send the new url to contentscripts.js
   if (changeInfo.url) {
     chrome.tabs.sendMessage(tabId, {
-      message: "url.changed",
+      message: 'url.changed',
       url: changeInfo.url,
     });
   }
