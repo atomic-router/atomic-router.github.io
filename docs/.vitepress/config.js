@@ -40,12 +40,12 @@ export default {
           {
             text: 'API',
             items: [
-              { text: 'RouterProvider', link: '/react/router-provider' },
-              { text: 'Link', link: '/react/link' },
-              { text: 'Route', link: '/react/route' },
-              { text: 'createRouteView', link: '/react/create-route-view' },
-              { text: 'createRoutesView', link: '/react/create-routes-view' },
-              { text: 'useLink', link: '/react/use-link' },
+              { text: 'RouterProvider', link: '/react/api/router-provider' },
+              { text: 'Link', link: '/react/api/link' },
+              { text: 'Route', link: '/react/api/route' },
+              { text: 'createRouteView', link: '/react/api/create-route-view' },
+              { text: 'createRoutesView', link: '/react/api/create-routes-view' },
+              { text: 'useLink', link: '/react/api/use-link' },
             ],
           },
         ],
