@@ -1,22 +1,26 @@
-# createRouter
+# createHistoryRouter
 
 Creates router instance and sync routes state with the passed history instance.
+
+```ts
+import { createHistoryRouter } from 'atomic-router';
+```
 
 ## Usage
 
 ```ts
-import { createHistoryRouter } from "atomic-router";
-import { createBrowserHistory, createMemoryHistory } from "history";
+import { createHistoryRouter } from 'atomic-router';
+import { createBrowserHistory, createMemoryHistory } from 'history';
 
-import { homeRoute } from "@/pages/home";
-import { postsRoute } from "@/pages/posts";
-import { postRoute } from "@/pages/post";
+import { homeRoute } from '@/pages/home';
+import { postsRoute } from '@/pages/posts';
+import { postRoute } from '@/pages/post';
 
 // 1. Define routes
 const routes = [
-  { path: "/", route: homeRoute },
-  { path: "/posts", route: postsRoute },
-  { path: "/posts/:postId", route: postRoute },
+  { path: '/', route: homeRoute },
+  { path: '/posts', route: postsRoute },
+  { path: '/posts/:postId', route: postRoute },
 ];
 
 // 2. Create router
@@ -49,11 +53,12 @@ const router = createHistoryRouter({
 ```
 
 ::: tip `notFoundRoute` mechanics  
-Every time path changes:  
+Every time path changes:
+
 - If 0 routes matched and `notFoundRoute.$isOpened` is `false`, trigger `notFoundRoute.opened`
 - If 0 routes matched and `notFoundRoute.$isOpened` is `true`, trigger `notFoundRoute.updated`
 - If there's at least 1 route matched and `notFoundRoute.$isOpened` is `true`, trigger `notFoundRoute.closed`
-:::
+  :::
 
 ### `routeNotFound` event
 
@@ -79,7 +84,7 @@ You can add an optional `base` param to `createHistoryRouter`:
 
 ```ts
 const router = createHistoryRouter({
-  base: "/dashboard",
+  base: '/dashboard',
   routes,
 });
 ```

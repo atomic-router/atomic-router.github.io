@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@algolia/client-search': ^4.9.1
+  prettier: ^2.7.1
   vitepress: 1.0.0-alpha.13
   vue: ^3.2.37
 
@@ -9,6 +10,9 @@ dependencies:
   '@algolia/client-search': 4.14.2
   vitepress: 1.0.0-alpha.13_tbpndr44ulefs3hehwpi2mkf2y
   vue: 3.2.39
+
+devDependencies:
+  prettier: 2.7.1
 
 packages:
 
@@ -625,6 +629,12 @@ packages:
   /preact/10.10.6:
     resolution: {integrity: sha512-w0mCL5vICUAZrh1DuHEdOWBjxdO62lvcO++jbzr8UhhYcTbFkpegLH9XX+7MadjTl/y0feoqwQ/zAnzkc/EGog==}
     dev: false
+
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
 
   /resolve/1.22.1:
     resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}

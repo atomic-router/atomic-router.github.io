@@ -1,58 +1,72 @@
 export default {
-  title: "Atomic Router",
-  description: "Platform-agnostic router that does not break your architecture",
+  title: 'Atomic Router',
+  description: 'Platform-agnostic router that does not break your architecture',
   themeConfig: {
     sidebar: [
       {
-        text: "Introduction",
+        text: 'Introduction',
         items: [
-          { text: "What is Atomic Router", link: "/" },
-          { text: "Getting Started", link: "/getting-started" },
+          { text: 'What is Atomic Router', link: '/' },
+          { text: 'Getting Started', link: '/getting-started' },
         ],
       },
       {
-        text: "API",
+        text: 'Examples',
         items: [
-          { text: "createRoute", link: "/api/create-route" },
-          { text: "createRouter", link: "/api/create-router" },
-          { text: "redirect", link: "/api/redirect" },
-          { text: "chainRoute", link: "/api/chain-route" },
+          { text: 'Data Fetching', link: '/examples/data-fetching' },
+          { text: 'Protected route', link: '/examples/protected-route' },
+          { text: 'Catch All', link: '/examples/catch-all' },
+          { text: 'Redirect', link: '/examples/redirect' },
+          { text: 'Query Params Sync', link: '/examples/query-params-sync' },
+          { text: 'SSR Support', link: '/examples/ssr' },
+          { text: 'Micro-frontends', link: '/examples/micro-frontends' },
+          { text: 'Browser extension', link: '/examples/browser-extension' },
         ],
       },
       {
-        text: "Examples",
+        text: 'API',
         items: [
-          { text: "Data Fetching", link: "/examples/data-fetching" },
-          { text: "Protected route", link: "/examples/protected-route" },
-          { text: "Catch All", link: "/examples/catch-all" },
-          { text: "Redirect", link: "/examples/redirect" },
-          { text: "Query Params Sync", link: "/examples/query-params-sync" },
-          { text: "SSR Support", link: "/examples/ssr" },
-          { text: "Micro-frontends", link: "/examples/micro-frontends" },
-          { text: "Browser extension", link: "/examples/browser-extension" },
+          { text: 'createRoute', link: '/api/create-route' },
+          { text: 'createRouter', link: '/api/create-router' },
+          { text: 'redirect', link: '/api/redirect' },
+          { text: 'chainRoute', link: '/api/chain-route' },
         ],
       },
       {
-        text: "View-library bindings",
+        text: 'React',
+        items: [
+          { text: 'Installation', link: '/react/installation' },
+          { text: 'Scope and SSR', link: '/react/scope' },
+          {
+            text: 'API',
+            items: [
+              { text: 'RouterProvider', link: '/react/router-provider' },
+              { text: 'Link', link: '/react/link' },
+              { text: 'Route', link: '/react/route' },
+              { text: 'createRouteView', link: '/react/create-route-view' },
+              { text: 'createRoutesView', link: '/react/create-routes-view' },
+              { text: 'useLink', link: '/react/use-link' },
+            ],
+          },
+        ],
+      },
+      {
+        text: 'Another view-libraries bindings',
         items: [
           {
-            text: "React",
-            link: "https://github.com/atomic-router/react",
+            text: 'Forest',
+            link: 'https://github.com/atomic-router/forest',
           },
           {
-            text: "Forest",
-            link: "https://github.com/atomic-router/forest",
-          },
-          {
-            text: "Solid",
-            link: "https://github.com/atomic-router/solid",
+            text: 'Solid',
+            link: 'https://github.com/atomic-router/solid',
           },
         ],
       },
     ],
     editLink: {
       pattern: 'https://github.com/atomic-router/atomic-router.github.io/edit/master/docs/:path',
-      text: 'Edit this page on GitHub'
-    }
+      text: 'Edit this page on GitHub',
+    },
   },
 };
