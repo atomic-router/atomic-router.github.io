@@ -6,13 +6,13 @@ It renders `a` with handling routing.
 import { Link } from 'atomic-router-react';
 ```
 
-### Examples
+### Example
 
 ```tsx
 import { createRoute } from 'atomic-router';
-import { Link } from 'atomic-router-react';
+import { Link } from 'atomic-router-solid';
 
-const homeRoute = createRoute();
+const homeRoute = createRoute<{ postId: string }>();
 const postRoute = createRoute<{ postId: string }>();
 
 function Example() {
@@ -31,7 +31,7 @@ function Example() {
 All params:
 
 ```tsx
-import { Link } from 'atomic-router-react';
+import { Link } from 'atomic-router-solid';
 
 export function Example() {
   return (
@@ -39,8 +39,8 @@ export function Example() {
       to={route}
       params={{ foo: 'bar' }}
       query={{ bar: 'baz' }}
-      activeClassName="font-semibold text-red-400"
-      inactiveClassName="opacity-80"
+      activeClass="font-semibold text-red-400"
+      inactiveClass="opacity-80"
     />
   );
 }

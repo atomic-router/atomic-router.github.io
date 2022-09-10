@@ -8,10 +8,12 @@ Install core and react bindings:
 npm add atomic-router atomic-router-react
 ```
 
-Don't forget about peer dependencies, if you haven't installed them yet:
+Be sure to install peer dependencies, if it isn't already done yet:
 
 ```bash
 npm add effector effector-react react
 ```
 
-> Note: you can also use yarn or pnpm on your choice
+::: tip
+you can also use yarn or pnpm on your choice
+:::

@@ -51,15 +51,25 @@ export default {
         ],
       },
       {
+        text: 'SolidJS',
+        items: [
+          { text: 'Installation', link: '/solidjs/installation' },
+          {
+            text: 'API',
+            items: [
+              { text: 'RouterProvider', link: '/solidjs/api/router-provider' },
+              { text: 'Route', link: '/solidjs/api/route' },
+              { text: 'Link', link: '/solidjs/api/link' },
+            ],
+          },
+        ],
+      },
+      {
         text: 'Another view-libraries bindings',
         items: [
           {
             text: 'Forest',
             link: 'https://github.com/atomic-router/forest',
-          },
-          {
-            text: 'Solid',
-            link: 'https://github.com/atomic-router/solid',
           },
         ],
       },

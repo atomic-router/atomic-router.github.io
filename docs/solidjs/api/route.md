@@ -10,7 +10,7 @@ import { Route } from 'atomic-router-react';
 
 ```tsx
 import { createRoute } from 'atomic-router';
-import { Route } from 'atomic-router-react';
+import { Route } from 'atomic-router-solid';
 
 export const homeRoute = createRoute();
 

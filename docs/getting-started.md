@@ -8,9 +8,9 @@ npm install effector atomic-router history
 
 ## View-library bindings
 
-- [**React**](https://github.com/kelin2025/atomic-router-react)
+- [**React**](./react/installation.md)
+- [**SolidJS**](./solidjs/installation.md)
 - [**Forest**](https://github.com/sergeysova/atomic-router-forest)
-- [**Solid**](https://github.com/Drevoed/atomic-router-solid)
 
 ## Initialization
 
@@ -58,7 +58,8 @@ router.setHistory(history);
 
 ## `fork` support
 
-In order to work with `fork`, you need to add this to your `.babelrc`: 
+In order to work with `fork`, you need to add this to your `.babelrc`:
+
 ```json
 {
   "presets": ["atomic-router/babel-preset"]
