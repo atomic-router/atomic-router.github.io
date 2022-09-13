@@ -26,8 +26,8 @@ export default {
       {
         text: 'Atomic-Router API',
         items: [
-          { text: 'createHistoryRouter', link: '/api/create-router' },
           { text: 'createRoute', link: '/api/create-route' },
+          { text: 'createHistoryRouter', link: '/api/create-router' },
           { text: 'redirect', link: '/api/redirect' },
           { text: 'chainRoute', link: '/api/chain-route' },
         ],
