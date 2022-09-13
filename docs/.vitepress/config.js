@@ -41,10 +41,10 @@ export default {
             text: 'API',
             items: [
               { text: 'RouterProvider', link: '/react/api/router-provider' },
-              { text: 'Link', link: '/react/api/link' },
-              { text: 'Route', link: '/react/api/route' },
               { text: 'createRouteView', link: '/react/api/create-route-view' },
               { text: 'createRoutesView', link: '/react/api/create-routes-view' },
+              { text: 'Link', link: '/react/api/link' },
+              { text: 'Route', link: '/react/api/route' },
               { text: 'useLink', link: '/react/api/use-link' },
             ],
           },
@@ -65,7 +65,7 @@ export default {
         ],
       },
       {
-        text: 'Another view-libraries bindings',
+        text: 'Other view-libraries bindings',
         items: [
           {
             text: 'Forest',
