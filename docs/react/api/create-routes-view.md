@@ -25,8 +25,8 @@ import { router } from '@/app/routing';
 
 const RoutesView = createRoutesView({
   routes: [
-    { route: Home.route, view: HomePage },
-    { route: Post.route, view: PostPage },
+    { route: Home.route, view: HomePage.view },
+    { route: Post.route, view: PostPage.view },
   ],
   otherwise() {
     return <div>Page not found!</div>;
