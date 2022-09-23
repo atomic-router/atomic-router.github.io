@@ -15,6 +15,8 @@ Since you create router instance in the initialization layer, using `router.back
 
 To solve this issue, you can create external router controls with `$query` store and `back/forward` events.
 
+Also, external controls are required for [`querySync`](/api/query-sync) method.
+
 ## Usage
 
 Create controls:
