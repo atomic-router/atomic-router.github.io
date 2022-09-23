@@ -1,6 +1,6 @@
 # Query Params Sync
 
-In this example, we will demonstrate how to use `querySync`
+In this example, we will demonstrate how to use [`querySync`](/api/query-sync)
 
 ## Task
 
@@ -51,7 +51,7 @@ const router = createHistoryRouter({
 })
 ```
 
-Now we can just use [`querySync`](/api/querySync) method in our model:
+Now we can just use [`querySync`](/api/query-sync) method in our model:
 
 ```ts{2,13-16}
 // @/pages/search
