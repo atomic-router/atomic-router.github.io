@@ -52,10 +52,11 @@ const router = createHistoryRouter({
 
 Now we can just use [`querySync`](/api/query-sync) method in our model:
 
-```ts{2,13-16}
+```ts{2,4,14-18}
 // @/pages/search
 import { createRoute, querySync } from 'atomic-router'
 import { createEvent, createStore } from 'effector'
+import { controls } from '@/shared/routing'
 
 export const searchPageRoute = createRoute()
 
@@ -67,7 +68,8 @@ $q.on(qChanged, (_, q) => q)
 
 querySync({
   source: { q: $q },
-  route: searchPageRoute
+  route: searchPageRoute,
+  controls
 })
 ```
 
@@ -79,11 +81,12 @@ If we don't want to spam query updates, we can pass `clock` parameter.
 
 Combined with [`patronum/debounce`](https://patronum.effector.dev/methods/debug/) it'll look like this:
 
-```ts{2,16}
+```ts{2,17}
 // @/pages/search
 import { debounce } from 'patronum'
 import { createRoute, querySync } from 'atomic-router'
 import { createEvent, createStore } from 'effector'
+import { controls } from '@/shared/routing'
 
 export const searchPageRoute = createRoute()
 
@@ -96,7 +99,8 @@ $q.on(qChanged, (_, q) => q)
 querySync({
   source: { q: $q },
   clock: debounce({ source: qChanged, timeout: 30 }),
-  route: searchPageRoute
+  route: searchPageRoute,
+  controls
 })
 ```
 
@@ -106,11 +110,12 @@ This will update every 30ms
 
 If we want to keep `q` in query even if it's empty, we can use `cleanup` parameter
 
-```ts{18-21}
+```ts{19-22}
 // @/pages/search
 import { debounce } from 'patronum'
 import { createRoute, querySync } from 'atomic-router'
 import { createEvent, createStore } from 'effector'
+import { controls } from '@/shared/routing'
 
 export const searchPageRoute = createRoute()
 
@@ -127,6 +132,7 @@ querySync({
   cleanup: {
     empty: false
     // or preserve: ['q']
-  }
+  },
+  controls
 })
 ```
