@@ -30,6 +30,8 @@ export default {
           { text: 'createHistoryRouter', link: '/api/create-router' },
           { text: 'redirect', link: '/api/redirect' },
           { text: 'chainRoute', link: '/api/chain-route' },
+          { text: 'createRouterControls', link: '/api/create-router-controls' },
+          { text: 'querySync', link: '/api/query-sync' },
         ],
       },
       {
