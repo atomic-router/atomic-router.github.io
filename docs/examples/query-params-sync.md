@@ -37,10 +37,9 @@ export const controls = createRouterControls()
 
 In order for `controls.$query` to work, we need to pass it to our router:
 
-```ts{10}
+```ts{3,9}
 // @/app/routing
 import { createHistoryRouter } from 'atomic-router'
-
 import { controls } from '@/shared/routing'
 
 const routes = [/* ... */]
