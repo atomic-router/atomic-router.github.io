@@ -1,6 +1,6 @@
 # `querySync`
 
-::: tip Introduced in **0.7.1** 
+::: tip Introduced in **0.7.1**  
 :::
 
 Synchronizes chosen stores with query params from [`createRouterControls`](/api/create-router-controls.md)
