@@ -2,6 +2,9 @@ export default {
   title: 'Atomic Router',
   description: 'Platform-agnostic router that does not break your architecture',
   themeConfig: {
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/atomic-router' },
+    ],
     sidebar: [
       {
         text: 'Introduction',
