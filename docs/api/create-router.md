@@ -84,7 +84,7 @@ sample({
 });
 ```
 
-::: warn Warning
+::: warning Warning
 
 Make sure that subscription to `router.routeNotFound` is set **before** `router.setHistory` is triggered.  
 Otherwise, it won't be triggered for the first time, if app is already started with 404
