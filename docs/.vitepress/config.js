@@ -63,6 +63,8 @@ export default {
             text: 'API',
             items: [
               { text: 'RouterProvider', link: '/solidjs/api/router-provider' },
+              { text: 'createRouteView', link: '/solidjs/api/create-route-view' },
+              { text: 'createRoutesView', link: '/solidjs/api/create-routes-view' },
               { text: 'Route', link: '/solidjs/api/route' },
               { text: 'Link', link: '/solidjs/api/link' },
             ],
