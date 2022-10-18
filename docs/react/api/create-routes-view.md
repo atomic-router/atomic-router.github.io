@@ -60,7 +60,8 @@ export function Example() {
 
 ### Layouts
 
-::: tip Added in atomic-router-react@0.8.0 :::
+::: tip Added in atomic-router-react@0.8.0 
+:::
 
 There's an optional prop `layout` in routes config
 
