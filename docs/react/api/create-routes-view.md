@@ -77,5 +77,5 @@ const RoutesView = createRoutesView({
   },
 });
 ```
-This will render page inside `BaseLayout` on `Home` and `Posts` pages, and inside `SinglePostLayout` for `SinglePost` page.  
+It will wrap `HomePage` and `PostsPage` into `BaseLayout`, and `SinglePost` into `SinglePostLayout`.  
 This is to avoid extra re-renders when switching between pages with the same layout
