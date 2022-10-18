@@ -57,3 +57,22 @@ export function Example() {
   return <RoutesView routes={routes} />;
 }
 ```
+
+### Layouts
+
+There's an optional prop `layout` in routes config
+
+```tsx
+const RoutesView = createRoutesView({
+  routes: [
+    { route: Home.route, view: HomePage.view, layout: BaseLayout },
+    { route: Posts.route, view: PostsPage.view, layout: BaseLayout },
+    { route: SinglePost.route, view: SinglePost.view, layout: SinglePostLayout },
+  ],
+  otherwise() {
+    return <div>Page not found!</div>;
+  },
+});
+```
+This will render page inside `BaseLayout` on `Home` and `Posts` pages, and inside `SinglePostLayout` for `SinglePost` page.  
+This is to avoid extra re-renders when switching between pages with the same layout
