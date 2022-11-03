@@ -3,7 +3,7 @@
 It renders a list of routes.
 
 ```ts
-import { createRouteView } from 'atomic-router-react';
+import { createRoutesView } from 'atomic-router-react';
 ```
 
 ::: tip Please, pay attention for a name
@@ -15,7 +15,7 @@ This function is about multiple routes. See also [`createRouteView`](./create-ro
 ### Example
 
 ```tsx
-import { createRouteView, RouterProvider } from 'atomic-router-react';
+import { createRoutesView, RouterProvider } from 'atomic-router-react';
 
 // { route: RouteInstance<...>, view: FC<...> }
 import { HomePage } from '@/pages/home';
