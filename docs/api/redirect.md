@@ -18,7 +18,7 @@ const homeRoute = createRoute();
 
 redirect({
   clock: goHomePressed,
-  target: homeRoute,
+  route: homeRoute,
 });
 ```
 
@@ -45,7 +45,7 @@ redirect({
   clock: readMorePressed,
   params: { postId: 1 },
   query: { foo: 'bar' },
-  target: readPostRoute,
+  route: readPostRoute,
 });
 ```
 
@@ -70,7 +70,7 @@ redirect({
   clock: editPostPressed,
   params: $post,
   query: $someQuery,
-  target: editPostRoute,
+  route: editPostRoute,
 });
 ```
 
@@ -92,7 +92,7 @@ const readPostPressed = createEvent<{ postId: string }>();
 redirect({
   clock: editPostPressed,
   params: (payload) => ({ postId: payload.postId }),
-  target: editPostRoute,
+  route: editPostRoute,
 });
 ```
 
