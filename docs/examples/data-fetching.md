@@ -76,7 +76,7 @@ import { $post, postLoadedRoute } from "./model";
 export const PostPage = () => {
   const isPostLoadedRouteOpened = useStore(postLoadedRoute.$isOpened);
 
-  if (isPostLoadedRouteOpened) {
+  if (!isPostLoadedRouteOpened) {
     return; /* Loading */
   }
 
