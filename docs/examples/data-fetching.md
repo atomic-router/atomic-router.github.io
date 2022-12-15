@@ -157,7 +157,7 @@ import { notFoundRoute } from "@/shared/common-routes";
 
 redirect({
   clock: getPostFx.failData,
-  target: notFoundRoute,
+  route: notFoundRoute,
 });
 ```
 
