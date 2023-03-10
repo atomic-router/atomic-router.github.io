@@ -101,6 +101,19 @@ sample({
 
 **Signature:** `Event<RouteParamsAndQuery<RouteParams>>`
 
+### `.closed`
+
+Triggers when route gets closed
+
+```ts
+sample({
+  clock: postRoute.closed,
+  target: cleanup,
+});
+```
+
+**Signature:** `Event<void>`
+
 ## Stores
 
 ### `$isOpened`
