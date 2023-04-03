@@ -50,7 +50,7 @@ export const router = createHistoryRouter({
 Use it anywhere:
 ```ts
 // @/pages/register
-import { sample, cancelButtonPressed } from 'effector'
+import { sample, createEvent } from 'effector'
 
 import { controls } from '@/shared/routing'
 
