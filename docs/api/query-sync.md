@@ -15,17 +15,17 @@ import { querySync } from 'atomic-router';
 ### Basic example
 
 ```ts
-import { createStore } from 'effector'
-import { createRoute, querySync } from 'atomic-router'
+import { createStore } from 'effector';
+import { querySync } from 'atomic-router';
 
-import { controls } from '@/shared/routing'
+import { controls } from '@/shared/routing';
 
-const $utmSource = createStore("")
+const $utmSource = createStore("");
 
 querySync({
   source: { utm_source: $utmSource },
-  controls
-})
+  controls,
+});
 ```
 
 This will 
@@ -37,20 +37,20 @@ This will
 You can pass `route` param if you want this sync to work only for a specific route:
 
 ```ts
-import { createStore } from 'effector'
-import { createRoute, querySync } from 'atomic-router'
+import { createStore } from 'effector';
+import { createRoute, querySync } from 'atomic-router';
 
-import { controls } from '@/shared/routing'
+import { controls } from '@/shared/routing';
 
-const searchRoute = createRoute()
+const searchRoute = createRoute();
 
-const $q = createStore("")
+const $q = createStore("");
 
 querySync({
   source: { q: $q },
-  route: searchRoute, 
-  controls
-})
+  route: searchRoute,
+  controls,
+});
 ```
 
 ### With a `clock`
@@ -59,29 +59,29 @@ If we don't want to spam route updates, there's a `clock` parameter.
 If it's passed, `querySync` will update route only when `clock` it's triggered:
 
 ```ts
-import { createRoute, querySync } from 'atomic-router'
-import { createStore, createEvent } from 'effector'
+import { createRoute, querySync } from 'atomic-router';
+import { createStore, createEvent } from 'effector';
 
-import { controls } from '@/shared/routing'
+import { controls } from '@/shared/routing';
 
-const canvasEditorRoute = createRoute()
+const canvasEditorRoute = createRoute();
 
-const canvasDragged = createEvent()
-const canvasDragEnded = createEvent()
+const canvasDragged = createEvent();
+const canvasDragEnded = createEvent();
 
-const $x = createStore('0')
-const $y = createStore('0')
+const $x = createStore('0');
+const $y = createStore('0');
 
-$x.on(canvasDragged, (_, { x }) => x)
+$x.on(canvasDragged, (_, { x }) => x);
 
-$y.on(canvasDragged, (_, { y }) => y)
+$y.on(canvasDragged, (_, { y }) => y);
 
 querySync({
   source: { x: $x, y: $y },
   route: canvasEditorRoute,
   clock: canvasDragEnded, 
-  controls
-})
+  controls,
+});
 ```
 
 ## `cleanup` parameter
@@ -97,10 +97,10 @@ querySync({
     // Strip empty params ('', 0, false, null)
     empty: true,
     // Preserves params that should've been removed by irerelevant/empty params
-    preserve: ['utm_source']
+    preserve: ['utm_source'],
   }, 
-  controls
-})
+  controls,
+});
 ```
 
 - `cleanup` is optional. Default strategy is `{ irrelevant: true, empty: false, preserve: [] }`
