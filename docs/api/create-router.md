@@ -19,8 +19,8 @@ import { postRoute } from '@/pages/post';
 
 import { appStarted } from '@/shared/init';
 
-// 1. Define routes
-const routes = [
+// 1. Define routes and URLs map
+const routesMap = [
   { path: '/', route: homeRoute },
   { path: '/posts', route: postsRoute },
   { path: '/posts/:postId', route: postRoute },
@@ -28,11 +28,11 @@ const routes = [
 
 // 2. Create router
 const router = createHistoryRouter({
-  routes: routes,
+  routes: routesMap,
 });
 
 // 3. Create history
-const history = isSsr ? createMemoryHistory() : createBrowserHistory();
+const history = isSSR ? createMemoryHistory() : createBrowserHistory();
 
 // 4. Attach it to router
 sample({
