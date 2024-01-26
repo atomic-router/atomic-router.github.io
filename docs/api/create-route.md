@@ -51,11 +51,15 @@ sample({
 You can also add `replace: true` option to do `history.replace` instead of `history.push`:
 
 ```ts
-postRoute.navigate({
-  params: { postId: '123' },
-  query: { foo: 'bar' },
-  replace: true,
-});
+sample({
+  clock: someThingHappened,
+  fn: () => ({
+    params: { postId: '123' },
+    query: { foo: 'bar' },
+    replace: true,
+  }),
+  target: postRoute.navigate,
+})
 ```
 
 **Signature:** `Effect<RouteParamsAndQuery<RouteParams> & { replace?: boolean }, RouteParamsAndQuery<RouteParams>>`
@@ -65,7 +69,11 @@ postRoute.navigate({
 The same as `.navigate` but with params only
 
 ```ts
-postRoute.open({ postId: '123' });
+sample({
+  clock: somethingHappened,
+  fn: () => ({ postId: '123' }),
+  target: postRoute.open,
+})
 // /posts/:postId -> /posts/123
 ```
 
