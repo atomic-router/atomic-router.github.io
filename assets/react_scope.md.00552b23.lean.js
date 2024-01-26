@@ -1,0 +1,1 @@
+import{_ as s,c as a,o,a as e}from"./app.5d82f9ad.js";const u=JSON.parse('{"title":"Scope and SSR support","description":"","frontmatter":{},"headers":[],"relativePath":"react/scope.md"}'),n={name:"react/scope.md"},p=e("",4),t=[p];function l(c,r,D,i,y,F){return o(),a("div",null,t)}const _=s(n,[["render",l]]);export{u as __pageData,_ as default};
