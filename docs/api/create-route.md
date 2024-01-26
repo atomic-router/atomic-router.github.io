@@ -23,8 +23,9 @@ import { createRoute } from 'atomic-router';
 export const homeRoute = createRoute();
 export const postRoute = createRoute<{ postId: string }>();
 
-homeRoute.open();
-postRoute.open({ postId: '123' });
+// prefer `sample` over imperative events call
+homeRoute.open(); // Effect
+postRoute.open({ postId: '123' }); // Effect<{ postId: string }>
 
 postRoute.$params.watch(console.log);
 ```
@@ -36,10 +37,14 @@ postRoute.$params.watch(console.log);
 Open the route with specified params and query
 
 ```ts
-postRoute.navigate({
-  params: { postId: '123' },
-  query: { foo: 'bar' },
-});
+sample({
+  clock: someThingHappened,
+  fn: () => ({
+    params: { postId: '123' },
+    query: { foo: 'bar' },
+  }),
+  target: postRoute.navigate,
+})
 // /posts/:postId -> /posts/123?foo=bar
 ```
 
@@ -121,7 +126,7 @@ sample({
 Detects whether the route is currently opened or not.
 
 ```ts
-postRoute.$isOpened.getState(); // true/false
+postRoute.$isOpened; // true/false
 ```
 
 **Signature:** `Store<boolean>`
@@ -133,7 +138,7 @@ Current route params. These params are used as tokens for URL set in **router**.
 If route is not opened, `$params` will be `{}`
 
 ```ts
-postRoute.$params.getState(); // { postId: 123 }
+postRoute.$params; // { postId: 123 }
 ```
 
 **Signature:** `Store<RouteParams>`
@@ -145,7 +150,7 @@ Current route query. These are used to build [**Query String**](https://en.wikip
 If route is not opened, `$query` will be `{}`
 
 ```ts
-postRoute.$query.getState(); // { foo: 'bar' }
+postRoute.$query; // { foo: 'bar' }
 ```
 
 **Signature:** `Store<RouteQuery>`
