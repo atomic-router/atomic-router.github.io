@@ -9,12 +9,15 @@ import { createHistoryRouter } from 'atomic-router';
 ## Usage
 
 ```ts
+import { sample } from 'effector';
 import { createHistoryRouter } from 'atomic-router';
 import { createBrowserHistory, createMemoryHistory } from 'history';
 
 import { homeRoute } from '@/pages/home';
 import { postsRoute } from '@/pages/posts';
 import { postRoute } from '@/pages/post';
+
+import { appStarted } from '@/shared/init';
 
 // 1. Define routes
 const routes = [
@@ -32,7 +35,11 @@ const router = createHistoryRouter({
 const history = isSsr ? createMemoryHistory() : createBrowserHistory();
 
 // 4. Attach it to router
-router.setHistory(history);
+sample({
+  clock: appStarted,
+  fn: () => history,
+  target: router.setHistory,
+})
 ```
 
 ## Handling 404 errors
