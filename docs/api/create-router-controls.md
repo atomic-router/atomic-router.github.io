@@ -38,10 +38,10 @@ Pass it to `createHistoryRouter`:
 import { createHistoryRouter } from 'atomic-router';
 import { controls } from '@/shared/routing';
 
-const routes = [/* ... */];
+const routesMap = [/* ... */];
 
 export const router = createHistoryRouter({
-  routes,
+  routes: routesMap,
   controls,
 });
 ```
