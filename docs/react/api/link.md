@@ -45,3 +45,18 @@ export function Example() {
   );
 }
 ```
+
+Prevent navigation:
+
+```tsx
+import { Link } from 'atomic-router-react';
+
+export function Example() {
+  return (
+    <Link
+      to={route}
+      onClick={event => event.preventDefault()}
+    />
+  );
+}
+```
