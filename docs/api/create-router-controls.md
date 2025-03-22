@@ -25,39 +25,37 @@ Create controls:
 // @/shared/routing
 import { createRouterControls } from 'atomic-router';
 
-export const controls = createRouterControls()
+export const controls = createRouterControls();
 
-controls.$query   // Store<RouteQuery> Store with current query params
-controls.back     // Event<void> Trigger it to call history.back
-controls.forward  // Event<void> Trigger it to call history.forward
+controls.$query;   // StoreWritable<RouteQuery> Store with current query params
+controls.back;     // EventCallable<void> Trigger it to call history.back
+controls.forward;  // EventCallable<void> Trigger it to call history.forward
 ```
 
 Pass it to `createHistoryRouter`:
 ```ts
 // @/app/router
-import { createHistoryRouter } from 'atomic-router'
+import { createHistoryRouter } from 'atomic-router';
+import { controls } from '@/shared/routing';
 
-import { controls } from '@/shared/routing'
-
-const routes = [/* ... */]
+const routesMap = [/* ... */];
 
 export const router = createHistoryRouter({
-  routes,
-  controls
-})
+  routes: routesMap,
+  controls,
+});
 ```
 
 Use it anywhere:
 ```ts
 // @/pages/register
 import { sample, createEvent } from 'effector'
-
 import { controls } from '@/shared/routing'
 
-const cancelButtonPressed = createEvent<MouseEvent>()
+export const cancelButtonPressed = createEvent();
 
 sample({
   clock: cancelButtonPressed,
-  target: controls.back
-})
+  target: controls.back,
+});
 ```
