@@ -37,6 +37,7 @@ export function Example() {
   return (
     <Link
       to={route}
+      replace={true}
       params={{ foo: 'bar' }}
       query={{ bar: 'baz' }}
       activeClassName="font-semibold text-red-400"
