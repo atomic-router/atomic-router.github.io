@@ -8,7 +8,8 @@ We want to catch all `/foo/bar`, `/foo/bar/baz` and `/foo/bar/baz/test` paths.
 
 ## Solution
 
-Since we use [`path-to-regexp`](https://github.com/pillarjs/path-to-regexp) for path matching, this route won't differ from others:
+Since we use [`path-to-regexp`](https://github.com/pillarjs/path-to-regexp/tree/v6.2.0) for path matching, this route won't differ from others:
+* important: path-to-regexp version 6.2.0. newest version has different api
 
 ```ts
 import { createRoute, createHistoryRouter } from 'atomic-router'
